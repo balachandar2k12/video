@@ -1,0 +1,45 @@
+ <?php
+ $per_page = 1; 
+if($_GET)
+{
+$page=$_GET['page'];
+}
+
+$start = ($page-1)*$per_page;
+$sql = "select * from IMAGES order by image_id limit $start,$per_page";
+$result = mysql_query($sql);
+          while($row = mysql_fetch_array($result)){ 
+          foreach($row AS $key => $value) { $row[$key] = stripslashes($value); } 
+            ?>
+          <li class="span2" id="<?php echo $row['image_id'];  ?>">
+         <div class="thumbnail">
+          <img src="upload_images/thumbnail/<?php echo $row['image_path'];  ?>" alt="ALT NAME">
+         <div class="caption">
+      
+          <p><?php echo $row['image_path'];  ?></p>
+         <p align="center"><a href="#" rel="<?php echo $row['image_id'];  ?>" class="btn btn-primary btn-block image-del">Delete</a></p>
+        </div>
+       </div>
+       </li>
+    <?php   }  ?>
+
+
+ <tr>
+
+  <td align="center" valign="top">
+    <a href="/videos/video.php?v=<?php echo $row["embed_link"]; ?>">
+      <img src="/static/img/no_video.png" width="200" height="151" vspace="5" />
+      <br>
+      <b>
+        <a href="/videos/video.php?v=<?php echo $row["embed_link"]; ?>">
+         <?php echo $row["comment"]; ?>
+        </b>
+      </a>
+      <br>
+      <strong>
+        <span style="line-height:20px">
+          Total Views <?php echo $row["total_views"];; ?>
+        </span>
+      </strong>
+    </td>
+ </tr>
