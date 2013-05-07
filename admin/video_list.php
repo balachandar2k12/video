@@ -120,7 +120,7 @@
     <body>
 		<div class="box_admin">
 			<div align="center" style="font-size:24px;color:#cc0000;font-weight:bold">List of videos</div>
-	        <div id="loading"></div>
+            <div id="loading"></div>
 	        <div id="container">
 	            <div class="data"></div>
 	            <div class="pagination"></div>

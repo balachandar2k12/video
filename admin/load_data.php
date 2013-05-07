@@ -4,7 +4,7 @@ if($_POST['page'])
 $page = $_POST['page'];
 $cur_page = $page;
 $page -= 1;
-$per_page = 2;
+$per_page = 5;
 $previous_btn = true;
 $next_btn = true;
 $first_btn = true;
@@ -26,7 +26,7 @@ while ($row = mysql_fetch_array($result_pag_data)) {
     <td><a href='edit_video?videoid=".$row['id']."'>Edit</a></td>
     <td><a href='#' onclick='delete_video(".$row['id'].")'>Delete</a></td></tr>";
 }
-$msg = "<div class='data'><table class='video_list_table' border=1><tr><td>ID</td><td>Title</td><td>Embedded Link</td><td>Description</td><td>Thumbnail Image</td><td>Edit</td><td>Delete</td>" . $msg . "</table></div>"; // Content for Data
+$msg = "<div class='data'><a href='addvideo.php'>Add New</a><table class='video_list_table' border=1><tr><td>ID</td><td>Title</td><td>Embedded Link</td><td>Description</td><td>Thumbnail Image</td><td>Edit</td><td>Delete</td>" . $msg . "</table></div>"; // Content for Data
 
 
 /* --------------------------------------------- */

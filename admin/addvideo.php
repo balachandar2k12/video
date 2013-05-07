@@ -28,7 +28,7 @@ if(@$_POST ['submit'])
 			{
 				$query="insert into videos(title,embed_link,description,thumbnail_image) values('$title','$embed_link','$description','$file_path')";
 				mysql_query ($query) or die ('could not updated:'.mysql_error());
-				echo "Your image upload successfully !!";
+				header( 'Location: video_list.php' ) ;
 			}
 			else
 			{
@@ -93,7 +93,7 @@ if(@$_POST ['submit'])
 								<tr>
 									<td>Embedded Link
 									</td>
-									<td><input type="text" required name="embed_link" id="emb_link" />
+									<td><input type="url" required name="embed_link" id="emb_link" />
 									</td>
 								</tr>
 								<tr>

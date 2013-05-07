@@ -122,7 +122,7 @@ else
 				<tr>
 					<td>Embedded Link
 					</td>
-					<td><input type="text" required name="embed_link" id="emb_link" value="<?php echo $embed_link; ?>"/>
+					<td><input type="url" required name="embed_link" id="emb_link" value="<?php echo $embed_link; ?>"/>
 					</td>
 				</tr>
 				<tr>

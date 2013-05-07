@@ -3,7 +3,6 @@
     <title>
       vide hip hop
     </title>
-    <link rel="stylesheet" type="text/css" href="css/videoM.css">
   </head>
   
   <body style="background:#efefef;">
