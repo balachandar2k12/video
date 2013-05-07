@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html>
 <body>
-<?php echo include('header.php'); ?>
+<?php echo include('header.php');
+include_once("inc/dbConnect.inc.php");
+if (isset($_POST['submitted'])) {
+$name=$_POST['visitor'];
+$email=$_POST['visitormail'];
+$attn=$_POST['attn'];
+$notes=$_POST['notes'];
+
+//echo "<br>arr";
+//print_r($season_arr);
 
 
+$sql = "INSERT INTO `vedio_hiphop`.`contacts` (`name`, `email`, `attention`, `message`) VALUES ('".$name."' , '".$email."','".$attn."','".$notes."');";
+
+ //echo "$sql";
+ if(mysql_query($sql)){
+ echo '<script type="text/javascript"> alert("Message succesfully delivered!");</script>
+';
+ }
+
+}
+
+?>
+<script type="text/javascript"> alert("Message succesfully delivered!");</script>
 
 
 <form method="post" action="">
@@ -12,9 +33,9 @@
 <input type="hidden" name="httpagent" value="" />
 
 <br />
-Name: <input type="text" name="visitor" size="35" />
+Name: <input type="text" name="visitor" size="35" required/>
 <br /> <br />
-Email: (*Required*) <input type="text" name="visitormail" size="35" />
+Email: (*Required*) <input type="text" name="visitormail" size="35" required/>
 <br /> <br />
 Attention:
 <select name="attn" size="1">
@@ -27,10 +48,11 @@ Attention:
 <br /><br />
 Message:
 <br />
-<textarea name="notes" rows="4" cols="40"></textarea>
+<textarea name="notes" rows="4" cols="40" required></textarea>
 <br />
 <br />
 <input type="submit" value="Send Mail" />
+<input type="hidden" name="submitted" value="true" />
 </form>
 <br><br>
 <br>
