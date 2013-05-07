@@ -21,7 +21,7 @@
   RSS
 </a>
 | 
-<a href="#/contacts.php">
+<a href="contact.php">
   CONTACT
 </a>
 | 

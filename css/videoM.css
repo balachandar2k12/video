@@ -1,6 +1,8 @@
 
 html{height:100%;margin-bottom:1px;}
-body{margin:0px;padding:0px;color:#000;font-family:Geneva, Arial,sans-serif;background:url('http://hw-cache.worldstarhiphop.com/videos/images/bg_grad.jpg') repeat-x fixed #000;text-align:center;}
+body{margin:0px;padding:0px;color:#000;font-family:Geneva, Arial,sans-serif;
+	/*background:url('http://hw-cache.worldstarhiphop.com/videos/images/bg_grad.jpg') repeat-x fixed #000;*/
+	text-align:center;}
 h1{margin:0px;padding:2px 0px 5px 5px;text-align:left;font-size:small;color:#fff;}
 h2{margin:10px 0px 0px 0px;font-size:medium;padding:0px 0px 0px 0px;display:inline;color:#fff;}
 
@@ -147,4 +149,130 @@ a{color:#00f;font-size:10px;}
 	color:#fff;
 	border:none;
 	height:20px;
+}
+
+
+.box_admin{
+	width:800px;
+	margin-top:2%;
+	margin-left:auto;
+	margin-right:auto;
+	height:80%;
+	
+	border: 1px #333 solid;
+	padding:5px;
+}
+
+#container_video{
+	margin:auto;
+	width:550px;
+}
+#container .pagination{
+	margin-left:-30px;
+}
+
+.video_list_table{
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+/* table css */
+
+
+.video_list_table {
+	margin-top:50px;
+	margin-bottom:50px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px;
+	width:90%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.video_list_table table{
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.video_list_table tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.video_list_table table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.video_list_table table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.video_list_table tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.video_list_table tr:hover td{
+	
+}
+.video_list_table tr:nth-child(odd){ background-color:#ffaa56; }
+.video_list_table tr:nth-child(even)    { background-color:#ffffff; }.video_list_table td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.video_list_table tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.video_list_table tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.video_list_table tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.video_list_table tr:first-child td{
+		background:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7f00", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#ff7f00,bf5f00);
+
+	background-color:#ff7f00;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.video_list_table tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #ff7f00 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7f00), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #ff7f00 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7f00", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#ff7f00,bf5f00);
+
+	background-color:#ff7f00;
+}
+.video_list_table tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.video_list_table tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
 }
