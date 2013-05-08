@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<style type="text/css">
+  #form-container{
+  text-align: center;
+  margin-top: 36PX;
+		margin-left: 20%;
+		max-width: 60%;
+		border: 1px solid grey;
+		border-radius: 28px;
+  }
+	</style>
+</head>
 <body>
-<?php echo include('header.php');
+
+<?php include('header.php');
 include_once("inc/dbConnect.inc.php");
-if (isset($_POST['submitted'])) {
+if (isset($_POST['submitted']) && $_POST['visitormail']!= "") {
 $name=$_POST['visitor'];
 $email=$_POST['visitormail'];
 $attn=$_POST['attn'];
@@ -26,7 +39,7 @@ $sql = "INSERT INTO `vedio_hiphop`.`contacts` (`name`, `email`, `attention`, `me
 ?>
 <script type="text/javascript"> alert("Message succesfully delivered!");</script>
 
-
+<div id="form-container">
 <form method="post" action="">
 <input type="hidden" name="ip" value="" />
 <input type="hidden" name="httpref" value="http://www.worldstarhiphop.com/videos/tos.php" />
@@ -35,10 +48,10 @@ $sql = "INSERT INTO `vedio_hiphop`.`contacts` (`name`, `email`, `attention`, `me
 <br />
 Name: <input type="text" name="visitor" size="35" required/>
 <br /> <br />
-Email: (*Required*) <input type="text" name="visitormail" size="35" required/>
+Email: * <input type="text" name="visitormail" size="35" required/>
 <br /> <br />
 Attention:
-<select name="attn" size="1">
+<select name="attn" size="">
 <option value=" General ">General </option>
 <option value=" Technical ">Technical </option>
 <option value=" Legal ">Legal </option>
@@ -72,5 +85,7 @@ of the video is governed by our <a href="#" target="_blank">On Line Video Submis
 that you have read, understood and agreed to the terms and conditions of<br>
 that Agreement.<br>
 </center>
+</div>
+
 </body>
 </html>

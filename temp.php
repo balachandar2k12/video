@@ -243,7 +243,7 @@ $result = mysql_query($sql);
 
              <td align="center" valign="top">
               <a href="video.php?v=<?php echo $row["id"]; ?>">
-                <img src="static/img/<?php echo ($row['thumbnail_image']!='') ? $row["thumbnail_image"] : "no_video.png" ; ?>" width="200" height="151" vspace="5" />
+                <img src="static/img/no_video.png" width="200" height="151" vspace="5" />
                 <b> <?php echo $row["date"]; ?>
                   <a href="/videos/video.php?v=<?php echo $row["embed_link"]; ?>">
                    <?php echo $row["comment"]; ?>
