@@ -46,7 +46,7 @@
         <td width="800" colspan="2">
           <center>
             <b>
-              Whyl Chyl, Billy Blue & Brisco - Put It Down [Label Submitted]
+
             </b>
           </center>
           <center>
