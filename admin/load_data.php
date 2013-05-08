@@ -10,23 +10,27 @@ $next_btn = true;
 $first_btn = true;
 $last_btn = true;
 $start = $page * $per_page;
-include"../db.php";
+ include_once('../inc/dbConnect.inc.php');
 
-$query_pag_data = "SELECT * from videos LIMIT $start, $per_page";
+$query_pag_data = "SELECT id,title,description,embed_link,thumbnail_image from videos LIMIT $start, $per_page";
 $result_pag_data = mysql_query($query_pag_data) or die('MySql Error' . mysql_error());
 $msg = "";
 while ($row = mysql_fetch_array($result_pag_data)) {
     //$htmlmsg=htmlentities($row['message']);
+    if(strlen($row['description'])>40)
+        $description=substr($row['description'],0,40).'...';
+    else
+        $description=$row['description'];
     $msg .= "<tr>
     <td>".$row['id']."</td>
     <td>".$row['title']."</td>
     <td>".$row['embed_link']."</td>
-    <td>".$row['description']."</td>
-    <td><img id='preview' src='".$row['thumbnail_image']."' width='50' height='50' alt='Thumbnail image' /></td>
+    <td>".$description."</td>
+    <td><img id='preview' src='../static/img/".$row['thumbnail_image']."' width='50' height='50' alt='Thumbnail image' /></td>
     <td><a href='edit_video?videoid=".$row['id']."'>Edit</a></td>
     <td><a href='#' onclick='delete_video(".$row['id'].")'>Delete</a></td></tr>";
 }
-$msg = "<div class='data'><a href='addvideo.php'>Add New</a><table class='video_list_table' border=1><tr><td>ID</td><td>Title</td><td>Embedded Link</td><td>Description</td><td>Thumbnail Image</td><td>Edit</td><td>Delete</td>" . $msg . "</table></div>"; // Content for Data
+$msg = "<div class='data'><a href='addvideo.php'>Add New</a><table class='video_list_table' border=1><tr><td>ID</td><td>Title</td><td>Embedded Link</td><td style='width:100px;'>Description</td><td>Thumbnail Image</td><td>Edit</td><td>Delete</td>" . $msg . "</table></div>"; // Content for Data
 
 
 /* --------------------------------------------- */

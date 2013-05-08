@@ -1,6 +1,5 @@
 <?php 
-$con=mysql_connect( "localhost","root","root");
-mysql_select_db ("video_hiphop",$con);
+ include_once('inc/dbConnect.inc.php');
 if(isset($_POST['SearchVideo']) && $_POST['SearchVideo']!="")
 {
   $key= $_POST['SearchVideo'];
@@ -75,10 +74,8 @@ else
                   <tr>
                     <td valign="top">
                       <div align="center">
-                        <a href="<?php echo $row['embed_link']?>" target="_self">
-                          <a href="<?php echo $row['embed_link']?>">
-                            <img src="<?php echo $row['thumbnail_image']?>" width="211" height="195" />
-                          </a>
+                        <a href="video.php?id=<?php echo $row['id']?>">
+                          <img src="<?php echo $row['thumbnail_image']?>" width="211" height="195" />
                         </a>
                       </div>
                     </td>

@@ -157,24 +157,25 @@ a{color:#00f;font-size:10px;}
 	margin-top:2%;
 	margin-left:auto;
 	margin-right:auto;
-	height:80%;
-	
+	height:90%;
 	border: 1px #333 solid;
 	padding:5px;
 }
 
 #container_video{
 	margin:auto;
-	width:550px;
+	width:600px;
 }
 #container .pagination{
 	margin-left:-30px;
 }
-
-.video_list_table{
-	margin-top:50px;
-	margin-bottom:50px;
+#heading{
+	text-align: center;
+	font-size:24px;
+	color:#cc0000;
+	font-weight:bold;
 }
+
 
 /* table css */
 

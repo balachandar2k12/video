@@ -1,6 +1,6 @@
 <?php 
-$con=mysql_connect( "localhost","root","root");
-mysql_select_db ("video_hiphop",$con);
+ include_once('../inc/dbConnect.inc.php');
+
 if(@$_POST ['submit'])
 {
 	$uploaddir='../static/img/';
@@ -103,7 +103,7 @@ else
 </head>
 <body>
 	<div class="box_admin">
-		<h1 class="bigdate">Edit Video Details</h1>
+		<h1 id="heading">Edit Video Details</h1>
 		<div style="height:50px"></div>
 		<div id="container_video" style="margin:auto">
 			<form name="form" action="" method="post" enctype="multipart/form-data">
@@ -138,16 +138,16 @@ else
 					</td>
 
 				</tr>
-				<tr>
-					<td>
-					</td>
-					<td><input type="submit" name="submit" value="submit" /> 
-					</td>
-				</tr>
 			</table>
 		</td>
 		<td>
-			<img id="preview" src="<?php echo $file_path; ?>" width="150" height="150" alt="Thumnail image" />
+			<img id="preview" src="../static/img/<?php echo $file_path; ?>" width="211" height="195" alt="Thumnail image" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" name="submit" value="submit" /> 
+			<a href='video_list.php'><input type="button" name="Back" value="Back" /> </a>
 		</td>
 	</tr>
 </table>

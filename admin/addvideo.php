@@ -1,6 +1,6 @@
 <?php 
-$con=mysql_connect( "localhost","root","root");
-mysql_select_db ("video_hiphop",$con);
+ include_once('../inc/dbConnect.inc.php');
+
 if(@$_POST ['submit'])
 {
 	$uploaddir='../static/img/';
@@ -19,14 +19,14 @@ if(@$_POST ['submit'])
 	$title=$_POST['title'];
 	$embed_link=$_POST['embed_link'];
 	$description=$_POST['description'];
-	$file_path = $uploaddir.$file_name;
+	$file_path = 'static/img/'.$file_name;
 
 	if (strpos($type,'image') !== false) {
 		if($file_name!="")
 		{
-			if(move_uploaded_file ($tmppath, $uploaddir.$file_name))
+			if(move_uploaded_file ($tmppath, '../static/img/'.$file_name))
 			{
-				$query="insert into videos(title,embed_link,description,thumbnail_image) values('$title','$embed_link','$description','$file_path')";
+				$query="insert into videos(title,embed_link,description,thumbnail_image) values('$title','$embed_link','$description','$file_name')";
 				mysql_query ($query) or die ('could not updated:'.mysql_error());
 				header( 'Location: video_list.php' ) ;
 			}
@@ -67,8 +67,10 @@ if(@$_POST ['submit'])
         	}
         	else
         	{
-        		alert("select image file");
-        		$("#thumb_file").val="";
+				alert("select Image File only...");
+				var msg='<input type="file" required name="thumb_file" id="thumb_file" accept="image/*" onchange="readURL(this)" />';
+				$('#preview').attr('src', '#');
+				$('#filetag').html(msg);
         	}
 
         }
@@ -76,7 +78,7 @@ if(@$_POST ['submit'])
 </head>
 <body>
 	<div class="box_admin">
-		<h1 class="bigdate">Enter Video Details</h1>
+		<h1 id="heading">Enter Video Details</h1>
 		<div style="height:50px"></div>
 		<div id="container_video" style="margin:auto">
 			<form name="form" action="" method="post" enctype="multipart/form-data">
@@ -105,23 +107,25 @@ if(@$_POST ['submit'])
 								<tr>
 									<td>Thumbnail Image
 									</td>
-									<td><input type="file" required name="thumb_file" id="thumb_file" accept="image/*" onchange="readURL(this)" />
+									<td><div id="filetag"><input type="file" required name="thumb_file" id="thumb_file" accept="image/*" onchange="readURL(this)" /></div>
 									</td>
 
 								</tr>
-								<tr>
-									<td>
-									</td>
-									<td><input type="submit" name="submit" value="submit" /> 
-									</td>
-								</tr>
+								
 							</table>
 						</td>
 						<td>
-							<img id="preview" src="<?php echo $file_path; ?>" width="150" height="150" alt="Thumnail image" />
+							<img id="preview" src="#" width="211" height="195" alt="Thumnail image" />
 						</td>
 					</tr>
-				</table>				
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" name="submit" value="submit" /> 
+							 <a href='video_list.php'><input type="button" name="Back" value="Back" /> </a>
+						</td>
+					</tr>
+				</table>
+
 			</form>
 		</div>
 	</div>

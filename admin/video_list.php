@@ -17,9 +17,9 @@
                 function loading_hide(){
                     $('#loading').fadeOut('fast');
                 }
-            
+
                 function loadData(page){
-                    loading_show();                    
+                    // loading_show();                    
                     $.ajax
                     ({
                         type: "POST",
@@ -29,7 +29,7 @@
                         {
                             $("#container").ajaxComplete(function(event, request, settings)
                             {
-                                loading_hide();
+                                // loading_hide();
                                 $("#container").html(msg);
                             });
                         }
@@ -119,7 +119,7 @@
     </head>
     <body>
 		<div class="box_admin">
-			<div align="center" style="font-size:24px;color:#cc0000;font-weight:bold">List of videos</div>
+			<div align="center" id="heading">List of videos</div>
             <div id="loading"></div>
 	        <div id="container">
 	            <div class="data"></div>
@@ -128,6 +128,7 @@
 		</div>
         <script type="text/javascript">
                  function delete_video(id){
+                    alert(id);
                     $.ajax
                     ({
                         type: "POST",
